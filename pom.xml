@@ -30,7 +30,6 @@
             <organizationUrl>http://openapitools.org</organizationUrl>
         </developer>
     </developers>
-
     <distributionManagement>
         <repository>
             <id>ossrh</id>
@@ -41,18 +40,8 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
     <build>
         <plugins>
-        <plugin>
-          <groupId>org.sonatype.central</groupId>
-          <artifactId>central-publishing-maven-plugin</artifactId>
-          <version>0.5.0</version>
-          <extensions>true</extensions>
-          <configuration>
-            <publishingServerId>central</publishingServerId>
-          </configuration>
-        </plugin>
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -250,7 +239,16 @@
                 </java>
               </configuration>
             </plugin>
-        </plugins>
+            <plugin>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>0.5.0</version>
+          <extensions>true</extensions>
+          <configuration>
+            <publishingServerId>central</publishingServerId>
+          </configuration>
+        </plugin>
+    </plugins>
     </build>
 
     <profiles>
@@ -272,7 +270,16 @@
                             </execution>
                         </executions>
                     </plugin>
-                </plugins>
+                    <plugin>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>0.5.0</version>
+          <extensions>true</extensions>
+          <configuration>
+            <publishingServerId>central</publishingServerId>
+          </configuration>
+        </plugin>
+    </plugins>
             </build>
         </profile>
     </profiles>
